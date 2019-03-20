@@ -1,5 +1,7 @@
 package kh.itstep.java.les6;
 
+import java.util.Comparator;
+
 public class Person {
     private String firstName;
     private String familyName;
@@ -28,4 +30,18 @@ public class Person {
     public int hashCode() {
         return (int) (Math.random()*1000);
     }
+
+    @Override
+    public String toString() {
+        return firstName + " " + familyName;
+    }
+
+    public boolean contains(String filter) {
+        String lowerFilter = filter.toLowerCase();
+        return firstName.toLowerCase().contains(lowerFilter) ||
+               familyName.toLowerCase().contains(lowerFilter);
+    }
+
+    public static final Comparator<? super Person> namesComparator = Comparator.comparing((Person p) -> p.familyName).thenComparing(p -> p.firstName);
+
 }

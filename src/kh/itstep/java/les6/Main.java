@@ -9,7 +9,7 @@ public class Main {
 //        list.add(new Person("John", "Smith"));
 //        System.out.println(list.size());
 
-        Set<Sum> items = new HashSet<Sum>();
+        Set<Sum> items = new HashSet<>();
         items.add(new Sum(2,5));
         items.add(new Sum(1,8));
         items.add(new Sum(3,4));
